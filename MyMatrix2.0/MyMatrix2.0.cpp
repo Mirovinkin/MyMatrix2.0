@@ -156,39 +156,29 @@ public:
         return matrixRes;
     }
 T MatrixMax() {
-        T max = 0;
+        T _max = 0;
         for (int i = 0; i < _rows; i++)
         {
-            for (int j = 0; j < _cols; j++)
+            for (int j = 1; j < _cols; j++)
             {
-                if (max(_matrix[i][j], _matrix[i][j + 1])) {
-                    max = _matrix[i][j];
-                }
-                else {
-                    continue;
-                }
+                _max = max(_matrix[i][j], _matrix[i][j + 1]);
             }
         }
 
-        return max;
+        return _max;
     }
 
     T MatrixMin() {
-        T min = 0;
+        T _min = 0;
         for (int i = 0; i < _rows; i++)
         {
-            for (int j = 0; j < _cols; j++)
+            for (int j = 1; j < _cols; j++)
             {
-                if (min(_matrix[i][j], _matrix[i][j + 1])) {
-                    max = _matrix[i][j];
-                }
-                else {
-                    continue;
-                }
+                _min = max(_matrix[i][j], _matrix[i][j + 1]);
             }
         }
 
-        return min;
+        return _min;
     }
 };
 int main()
